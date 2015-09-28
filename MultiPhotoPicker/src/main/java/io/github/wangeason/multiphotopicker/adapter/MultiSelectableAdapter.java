@@ -28,10 +28,10 @@ public abstract class MultiSelectableAdapter<VH extends RecyclerView.ViewHolder>
 
 
     /**
-     * Indicates if the item at position position is selected
+     * Indicates how many times is the photo get selected
      *
-     * @param photo Photo of the item to check
-     * @return true if the item is selected, false otherwise
+     * @param photo Photo of the item to select
+     * @return selected times
      */
     @Override
     public int selectedTimes(Photo photo) {

@@ -2,6 +2,7 @@ package io.github.wangeason.multiphotopicker.entity;
 
 /**
  * Created by donglua on 15/6/30.
+ * Modified by wangeason on 15/9/24
  */
 public class Photo {
 

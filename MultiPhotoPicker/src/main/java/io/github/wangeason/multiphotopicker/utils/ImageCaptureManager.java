@@ -17,6 +17,7 @@ import java.util.Date;
 /**
  * Created by donglua on 15/6/23.
  *
+ * Modified by wangeason on 15/9/24
  *
  * http://developer.android.com/training/camera/photobasics.html
  */

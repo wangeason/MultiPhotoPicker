@@ -27,7 +27,7 @@ import io.github.wangeason.multiphotopicker.event.OnItemClickListener;
 import io.github.wangeason.multiphotopicker.event.OnZoomListener;
 
 /**
- * Created by donglua on 15/5/31.
+ * Created by wangeason on 15/9/22.
  */
 public class PhotoMultiGridAdapter extends MultiSelectableAdapter<PhotoMultiGridAdapter.PhotoViewHolder> {
 

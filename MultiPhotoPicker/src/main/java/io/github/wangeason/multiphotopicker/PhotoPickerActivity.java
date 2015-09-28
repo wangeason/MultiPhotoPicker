@@ -408,7 +408,6 @@ public class PhotoPickerActivity extends AppCompatActivity {
     }
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        Log.i("PhotoPickerActivity", "onSaveInstance");
         captureManager.onSaveInstanceState(outState);
         MediaStoreHelper.onSaveInstanceState(outState);
         super.onSaveInstanceState(outState);
@@ -417,7 +416,6 @@ public class PhotoPickerActivity extends AppCompatActivity {
 
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        Log.i("PhotoPickerActivity", "onRestoreInstanceState");
         captureManager.onRestoreInstanceState(savedInstanceState);
         MediaStoreHelper.onRestoreInstanceState(savedInstanceState);
         super.onRestoreInstanceState(savedInstanceState);

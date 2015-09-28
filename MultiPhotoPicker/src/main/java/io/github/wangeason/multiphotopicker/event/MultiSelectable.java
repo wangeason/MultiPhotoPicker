@@ -6,7 +6,7 @@ import io.github.wangeason.multiphotopicker.entity.MultiSelectedPhoto;
 import io.github.wangeason.multiphotopicker.entity.Photo;
 
 /**
- * Created by donglua on 15/6/30.
+ * Created by wangeason on 15/9/24.
  */
 public interface MultiSelectable {
 

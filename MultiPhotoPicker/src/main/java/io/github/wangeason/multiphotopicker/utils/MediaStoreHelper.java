@@ -24,6 +24,7 @@ import static io.github.wangeason.multiphotopicker.PhotoPickerActivity.EXTRA_SHO
 
 /**
  * Created by donglua on 15/5/31.
+ * Modified by wangeason on 15/9/24
  */
 public class MediaStoreHelper {
 
@@ -33,8 +34,6 @@ public class MediaStoreHelper {
 
 
     public static void getPhotoDirs(FragmentActivity activity, Bundle args, PhotosResultCallback resultCallback) {
-
-        Log.i("PhotoPickerActivity", "getPhotoDirs");
         activity.getSupportLoaderManager()
                 .initLoader(0, args, new PhotoDirLoaderCallbacks(activity, resultCallback));
     }
@@ -51,13 +50,11 @@ public class MediaStoreHelper {
 
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-            Log.i("PhotoPickerActivity", "onCreateLoader");
             return new PhotoDirectoryLoader(context, args.getBoolean(EXTRA_SHOW_GIF, false));
         }
 
         @Override
         public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-            Log.i("PhotoPickerActivity", "onLoadFinished");
             if(data == null||isBlock){
                 isBlock = !isBlock;
                 return;

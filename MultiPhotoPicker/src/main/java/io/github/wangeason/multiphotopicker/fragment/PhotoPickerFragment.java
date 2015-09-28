@@ -23,9 +23,7 @@ import io.github.wangeason.multiphotopicker.entity.PhotoDirectory;
 import io.github.wangeason.multiphotopicker.event.OnZoomListener;
 import io.github.wangeason.multiphotopicker.utils.MediaStoreHelper;
 
-/**
- * Created by donglua on 15/5/31.
- */
+
 public class PhotoPickerFragment extends Fragment {
 
     private PhotoMultiGridAdapter photoGridAdapter;

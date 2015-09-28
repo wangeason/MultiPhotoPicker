@@ -8,6 +8,7 @@ import io.github.wangeason.multiphotopicker.PhotoPickerActivity;
 
 /**
  * Created by donglua on 15/7/2.
+ * Modified by wangeason on 15/9/24
  */
 public class PhotoPickerIntent extends Intent {
 
