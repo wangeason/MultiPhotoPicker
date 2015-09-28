@@ -17,7 +17,7 @@ Thanks to [PhotoPicker](https://github.com/donglua/PhotoPicker)
 
 ```groovy
 dependencies {
-    compile 'io.github.wangeason.multiphotopicker:PhotoPicker:0.1.0@aar'
+    compile 'io.github.wangeason.multiphotopicker:MultiPhotoPicker:0.1.0@aar'
     
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
@@ -29,9 +29,9 @@ dependencies {
 ```
 
 ### eclipse
-[![GO HOME](http://ww4.sinaimg.cn/large/5e9a81dbgw1eu90m08v86j20dw09a3yu.jpg)
+![GO HOME](https://github.com/wangeason/MultiPhotoPicker/blob/master/pic/5e9a81dbgw1eu90m08v86j20dw09a3yu.jpg)
 
-### Pick Photo
+### Pick Photo Multiple Times
 ```java
 PhotoPickerIntent intent = new PhotoPickerIntent(MainActivity.this);
 intent.setPhotoCount(9);
@@ -76,11 +76,11 @@ startActivityForResult(intent, REQUEST_CODE);
     >
     ...
     
-    <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
+    <activity android:name="io.github.wangeason.multiphotopicker.PhotoPickerActivity"
       android:theme="@style/Theme.AppCompat.NoActionBar" 
        />
 
-    <activity android:name="me.iwf.photopicker.PhotoPagerActivity"
+    <activity android:name="io.github.wangeason.multiphotopicker.PhotoPagerActivity"
       android:theme="@style/Theme.AppCompat.NoActionBar"/>
     
   </application>
