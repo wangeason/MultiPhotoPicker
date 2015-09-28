@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="del_color" format="reference"/>
+    <attr name="zoom_color" format="reference"/>
+    <attr name="camera" format="reference"/>
+</resources>

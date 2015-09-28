@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}">
+
+  <include android:id="@+id/toolbar" layout="@layout/toolbar" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/selected_photos"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_height="80dip"
+        />
+    <RelativeLayout
+        android:id="@+id/ll_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/selected_photos"
+        >
+        <Button
+            android:id="@+id/button"
+            android:text="@string/all_image"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ActionButton"
+            />
+        <Button
+            android:id="@+id/done"
+            android:text="@string/done"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.ActionButton"
+            />
+
+    </RelativeLayout>
+  <FrameLayout
+      android:id="@+id/container"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/toolbar"
+      android:layout_above="@id/ll_control"
+      >
+
+      <fragment
+          android:id="@+id/photoPickerFragment"
+          android:name="io.github.wangeason.multiphotopicker.fragment.PhotoPickerFragment"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+  </FrameLayout>
+
+
+
+</RelativeLayout>

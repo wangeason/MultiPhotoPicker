@@ -1,8 +1,23 @@
 <resources>
 
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">#ff669900</item>
+    </style>
+
+    <style name="photoPickerTheme" parent="photoPickerTheme.Base"/>
+    <style name="photoPickerTheme.Base" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">#ff669900</item>
+        <item name="del_color">@android:color/white</item>
+        <item name="zoom_color">@android:color/white</item>
+        <item name="camera">@drawable/camera</item>
     </style>
 
 </resources>

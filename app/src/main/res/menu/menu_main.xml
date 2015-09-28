@@ -2,8 +2,16 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context=".MainActivity">
-    <item android:id="@+id/action_settings"
-          android:title="@string/action_settings"
+    <item android:id="@+id/multi"
+          android:title="@string/multi_choose"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/single"
+          android:title="@string/single_choose"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/camera_switch"
+          android:title="@string/camera_switch"
           android:orderInCategory="100"
           app:showAsAction="never"/>
 </menu>

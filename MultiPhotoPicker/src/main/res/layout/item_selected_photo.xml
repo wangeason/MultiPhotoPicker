@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    >
+  <ImageView
+      android:layout_gravity="center"
+      android:id="@+id/iv_photo"
+      android:layout_margin="15dp"
+      android:scaleType="centerCrop"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:adjustViewBounds="true"
+      />
+
+    <net.steamcrafted.materialiconlib.MaterialIconView
+
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_margin="5dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentRight="true"
+    app:materialIcon="close_circle"
+    app:materialIconColor="?attr/del_color"
+    app:materialIconSize="20dp"
+    android:id="@+id/v_del"
+    />
+
+  <!--<ImageView-->
+      <!--android:layout_margin="5dip"-->
+      <!--android:clickable="true"-->
+      <!--android:id="@+id/v_del"-->
+      <!--android:src="@drawable/photo_checkbox_bg"-->
+      <!--android:layout_width="20dp"-->
+      <!--android:layout_height="20dp"-->
+      <!--/>-->
+
+</RelativeLayout>

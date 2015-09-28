@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MultiPhotoPicker</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="camera_switch">相机:%s</string>
+    <string name="single_choose">单选</string>
+    <string name="multi_choose">多选</string>
+    <string name="on">打开</string>
+    <string name="off">关闭</string>
+</resources>
