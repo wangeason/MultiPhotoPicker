@@ -17,7 +17,7 @@ Thanks to [PhotoPicker](https://github.com/donglua/PhotoPicker)
 
 ```groovy
 dependencies {
-    compile 'io.github.wangeason.multiphotopicker:MultiPhotoPicker:0.1.0@aar'
+    compile 'io.github.wangeason:MultiPhotoPicker:0.2.0'
     
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
