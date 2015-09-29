@@ -37,12 +37,12 @@ import io.github.wangeason.multiphotopicker.event.OnSelectedItemDelListener;
 import io.github.wangeason.multiphotopicker.fragment.PhotoPickerFragment;
 import io.github.wangeason.multiphotopicker.fragment.ImagePagerFragment;
 import io.github.wangeason.multiphotopicker.utils.ImageCaptureManager;
-import io.github.wangeason.multiphotopicker.utils.MediaStoreHelper;
 
 import static android.widget.Toast.LENGTH_LONG;
 
 public class PhotoPickerActivity extends AppCompatActivity {
 
+    public static final int INDEX_ALL_PHOTOS = 0;
     private ImageCaptureManager captureManager;
 
     private PhotoPickerFragment pickerFragment;
@@ -165,7 +165,7 @@ public class PhotoPickerActivity extends AppCompatActivity {
                 pickerFragment.getPhotoGridAdapter();
         multiGridAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public void OnItemCheck(int position, Photo photo, int selectedItemCount, int selectTimes) {
+            public void onItemClick(int position, Photo photo, int selectedItemCount, int selectTimes) {
                 if (multiChoose) {
                     if (photo.getSelectedTimes() > 0) {
                         if (selectedItemCount >= maxCount) {
@@ -241,7 +241,7 @@ public class PhotoPickerActivity extends AppCompatActivity {
         });
         selectedPhotoAdapter.setOnSelectedItemDelListener(new OnSelectedItemDelListener() {
             @Override
-            public void OnClick(int position, MultiSelectedPhoto path) {
+            public void onClick(int position, MultiSelectedPhoto path) {
                 multiGridAdapter.getSelectedPhotos().get(position).getPhoto().del();
                 multiGridAdapter.getSelectedPhotos().remove(position);
                 multiGridAdapter.notifyDataSetChanged();
@@ -361,17 +361,17 @@ public class PhotoPickerActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == ImageCaptureManager.REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
             captureManager.galleryAddPic(null);
-            MediaStoreHelper.setIsBlock(true);
+//            MediaStoreHelper.setIsBlock(true);
             if (multiGridAdapter.getPhotoDirectories().size() > 0) {
                 String path = captureManager.getCurrentPhotoPath();
-                PhotoDirectory directory = multiGridAdapter.getPhotoDirectories().get(MediaStoreHelper.INDEX_ALL_PHOTOS);
+                PhotoDirectory directory = multiGridAdapter.getPhotoDirectories().get(INDEX_ALL_PHOTOS);
                 Photo newPhoto = new Photo(path.hashCode(), path);
-                directory.getPhotos().add(MediaStoreHelper.INDEX_ALL_PHOTOS, newPhoto);
+                directory.getPhotos().add(INDEX_ALL_PHOTOS, newPhoto);
                 directory.setCoverPath(path);
 
                 for(PhotoDirectory item:multiGridAdapter.getPhotoDirectories()){
                     if(item.getName().equals(Environment.DIRECTORY_PICTURES)){
-                        item.getPhotos().add(MediaStoreHelper.INDEX_ALL_PHOTOS, newPhoto);
+                        item.getPhotos().add(INDEX_ALL_PHOTOS, newPhoto);
                         item.setCoverPath(path);
                         break;
                     }
@@ -409,7 +409,6 @@ public class PhotoPickerActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         captureManager.onSaveInstanceState(outState);
-        MediaStoreHelper.onSaveInstanceState(outState);
         super.onSaveInstanceState(outState);
     }
 
@@ -417,7 +416,6 @@ public class PhotoPickerActivity extends AppCompatActivity {
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         captureManager.onRestoreInstanceState(savedInstanceState);
-        MediaStoreHelper.onRestoreInstanceState(savedInstanceState);
         super.onRestoreInstanceState(savedInstanceState);
     }
 

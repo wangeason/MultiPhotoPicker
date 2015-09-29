@@ -83,7 +83,7 @@ public class PhotoSelectedAdapter extends RecyclerView.Adapter<PhotoSelectedAdap
                 @Override
                 public void onClick(View view) {
                     if (onSelectedItemDelListener != null) {
-                        onSelectedItemDelListener.OnClick(position, photo);
+                        onSelectedItemDelListener.onClick(position, photo);
                     }
                 }
             });

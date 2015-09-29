@@ -12,17 +12,16 @@ public interface MultiSelectable {
 
 
     /**
-     * Indicates if the item at position position is selected
+     * Indicates the selected times of the item
      *
-     * @param photo Photo of the item to check
-     * @return true if the item is selected, false otherwise
+     * @param photo Photo of the item
      */
     int selectedTimes(Photo photo);
 
     /**
-     * Toggle the selection status of the item at a given position
+     * increase of decrease the selected times
      *
-     * @param photo Photo of the item to toggle the selection status for
+     * @param photo Photo of the item to operate
      */
     void add(Photo photo);
 

@@ -7,5 +7,5 @@ import io.github.wangeason.multiphotopicker.entity.Photo;
  */
 public interface OnItemClickListener {
 
-    void OnItemCheck(int position, Photo path, int selectedItemCount, int selectTimes);
+    void onItemClick(int position, Photo path, int selectedItemCount, int selectTimes);
 }

@@ -86,8 +86,8 @@ public class PhotoMultiGridAdapter extends MultiSelectableAdapter<PhotoMultiGrid
             @Override
             public void onClick(View view) {
                 if (onItemClickListener != null) {
-                    onItemClickListener.OnItemCheck(position, photo,
-                            getSelectedItemCount(),selectedTimes);
+                    onItemClickListener.onItemClick(position, photo,
+                            getSelectedItemCount(), selectedTimes);
                 }
             }
         });

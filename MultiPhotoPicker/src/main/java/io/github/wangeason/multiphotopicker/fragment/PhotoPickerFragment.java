@@ -1,9 +1,7 @@
 package io.github.wangeason.multiphotopicker.fragment;
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.Loader;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -21,7 +19,8 @@ import io.github.wangeason.multiphotopicker.adapter.PhotoMultiGridAdapter;
 import io.github.wangeason.multiphotopicker.adapter.PopupDirectoryListAdapter;
 import io.github.wangeason.multiphotopicker.entity.PhotoDirectory;
 import io.github.wangeason.multiphotopicker.event.OnZoomListener;
-import io.github.wangeason.multiphotopicker.utils.MediaStoreHelper;
+import io.github.wangeason.multiphotopicker.event.PhotosResultCallback;
+import io.github.wangeason.multiphotopicker.utils.PhotoDirectoryAsyncTask;
 
 
 public class PhotoPickerFragment extends Fragment {
@@ -43,17 +42,15 @@ public class PhotoPickerFragment extends Fragment {
             mediaStoreArgs.putBoolean(PhotoPickerActivity.EXTRA_SHOW_GIF, ((PhotoPickerActivity) getActivity()).isShowGif());
         }
 
-        MediaStoreHelper.getPhotoDirs(getActivity(), mediaStoreArgs,
-                new MediaStoreHelper.PhotosResultCallback() {
-                    @Override
-                    public void onResultCallback(List<PhotoDirectory> dirs, Loader<Cursor> loader) {
-                        directories.clear();
-                        directories.addAll(dirs);
-                        photoGridAdapter.notifyDataSetChanged();
-                        listAdapter.notifyDataSetChanged();
-                        loader.stopLoading();
-                    }
-                });
+        new PhotoDirectoryAsyncTask(getActivity(), mediaStoreArgs, new PhotosResultCallback() {
+            @Override
+            public void onResultCallback(List<PhotoDirectory> dirs) {
+                directories.clear();
+                directories.addAll(dirs);
+                photoGridAdapter.notifyDataSetChanged();
+                listAdapter.notifyDataSetChanged();
+            }
+        }).execute();
     }
 
 
