@@ -18,13 +18,6 @@ Thanks to [PhotoPicker](https://github.com/donglua/PhotoPicker)
 ```groovy
 dependencies {
     compile 'io.github.wangeason:MultiPhotoPicker:0.2.0'
-    
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
-    compile 'com.nineoldandroids:library:2.4.0'
-    compile 'com.android.support:design:22.2.0'
-    compile 'com.github.bumptech.glide:glide:3.6.0'
-    compile 'net.steamcrafted:materialiconlib:1.0.4'
 }
 ```
 
