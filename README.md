@@ -2,6 +2,19 @@
 
 Thanks to [PhotoPicker](https://github.com/donglua/PhotoPicker)
 
+[MultiPhotoPicker Demo](http://fir.im/MultiPhotoPicker)
+
+Modifications:
+
+*  Selected pictures maintains after taking picture
+*  Selected pictures in All folder is also selected in its own folder
+*  Color, Theme, Icon editable
+*  Material Design
+
+This project is open to all contributors, if you find any bug or want to add feature to it.
+
+Appreciate your star.
+
 ---
 
 # Example
