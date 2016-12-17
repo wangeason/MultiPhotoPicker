@@ -16,6 +16,8 @@
   <string name="image_count">%1$d张</string>
     <string name="add">添加</string>
     <string name="take_picture">拍照</string>
+    <string name="choose_more">请多选几张！</string>
+    <string name="min_count_tips">必须选取至少%1$d张照片</string>
 
 
 

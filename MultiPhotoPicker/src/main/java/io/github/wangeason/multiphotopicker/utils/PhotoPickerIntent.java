@@ -51,4 +51,7 @@ public class PhotoPickerIntent extends Intent {
         this.putExtra(PhotoPickerActivity.EXTRA_MULTI_CHOOSE, multiChoose);
     }
 
+    public void setMinPhotoCount(int minCount) {
+        this.putExtra(PhotoPickerActivity.EXTRA_MIN_COUNT, minCount);
+    }
 }

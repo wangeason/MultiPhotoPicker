@@ -1,5 +1,6 @@
 package io.github.wangeason.multiphotopicker;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -7,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -50,6 +52,7 @@ public class PhotoPickerActivity extends AppCompatActivity {
     private ImagePagerFragment selectedPagerFragment;
 
     public final static String EXTRA_MAX_COUNT = "MAX_COUNT";
+    public final static String EXTRA_MIN_COUNT = "MIN_COUNT";
     public final static String EXTRA_SHOW_CAMERA = "SHOW_CAMERA";
     public final static String EXTRA_SHOW_GIF = "SHOW_GIF";
     public final static String EXTRA_MULTI_CHOOSE = "MULTI_CHOOSE";
@@ -60,8 +63,10 @@ public class PhotoPickerActivity extends AppCompatActivity {
     private MenuItem menuAddItem, menuCamera;
 
     public final static int DEFAULT_MAX_COUNT = 9;
+    public final static int DEFAULT_MIN_COUNT = 0;
 
     private int maxCount = DEFAULT_MAX_COUNT;
+    private int minCount = DEFAULT_MIN_COUNT;
 
     /**
      * to prevent multiple calls to inflate menu
@@ -103,6 +108,7 @@ public class PhotoPickerActivity extends AppCompatActivity {
         }
 
         maxCount = getIntent().getIntExtra(EXTRA_MAX_COUNT, DEFAULT_MAX_COUNT);
+        minCount = getIntent().getIntExtra(EXTRA_MIN_COUNT, DEFAULT_MIN_COUNT);
 
         btnDoneItem = (Button) findViewById(R.id.done);
         btnDoneItem.setText(getString(R.string.done_with_count, 0, maxCount));
@@ -112,9 +118,21 @@ public class PhotoPickerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 ArrayList<String> selectedPhotos = pickerFragment.getPhotoGridAdapter().getSelectedPhotoPaths();
-                intent.putStringArrayListExtra(KEY_SELECTED_PHOTOS, selectedPhotos);
-                setResult(RESULT_OK, intent);
-                finish();
+                if(selectedPhotos.size() >= minCount) {
+                    intent.putStringArrayListExtra(KEY_SELECTED_PHOTOS, selectedPhotos);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }else{
+                    AlertDialog.Builder builder= new AlertDialog.Builder(PhotoPickerActivity.this);
+                    builder.setTitle(R.string.choose_more).setCancelable(true).setMessage(getString(R.string.min_count_tips, minCount))
+                            .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            })
+                            .create().show();
+                }
             }
         });
 
@@ -158,7 +176,6 @@ public class PhotoPickerActivity extends AppCompatActivity {
 
             }
         });
-
 
 
         multiGridAdapter =
@@ -253,7 +270,6 @@ public class PhotoPickerActivity extends AppCompatActivity {
     }
 
     private void refreshDoneBtn() {
-
         int selectedCount = multiGridAdapter.getSelectedItemCount();
         btnDoneItem.setEnabled(selectedCount > 0);
         btnDoneItem.setText(getString(R.string.done_with_count, selectedCount, maxCount));

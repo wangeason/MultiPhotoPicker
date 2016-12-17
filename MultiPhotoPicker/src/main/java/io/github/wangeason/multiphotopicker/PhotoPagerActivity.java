@@ -31,7 +31,7 @@ public class PhotoPagerActivity extends AppCompatActivity {
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.activity_photo_pager);
+    setContentView(R.layout.mpp_activity_photo_pager);
 
     int currentItem = getIntent().getIntExtra(EXTRA_CURRENT_ITEM, 0);
     List<String> paths = getIntent().getStringArrayListExtra(EXTRA_PHOTOS);

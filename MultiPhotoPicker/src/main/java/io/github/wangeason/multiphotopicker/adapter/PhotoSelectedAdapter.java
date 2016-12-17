@@ -43,7 +43,7 @@ public class PhotoSelectedAdapter extends RecyclerView.Adapter<PhotoSelectedAdap
 
     @Override
     public PhotoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = inflater.inflate(R.layout.item_selected_photo, parent, false);
+        View itemView = inflater.inflate(R.layout.item_mpp_selected_photo, parent, false);
         PhotoViewHolder holder = new PhotoViewHolder(itemView);
         return holder;
     }

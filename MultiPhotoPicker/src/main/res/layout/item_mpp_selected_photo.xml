@@ -16,7 +16,7 @@
       />
 
     <net.steamcrafted.materialiconlib.MaterialIconView
-
+        android:id="@+id/v_del"
     android:layout_width="20dp"
     android:layout_height="20dp"
     android:layout_margin="5dp"
@@ -25,7 +25,6 @@
     app:materialIcon="close_circle"
     app:materialIconColor="?attr/del_color"
     app:materialIconSize="20dp"
-    android:id="@+id/v_del"
     />
 
   <!--<ImageView-->

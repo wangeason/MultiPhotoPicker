@@ -15,5 +15,7 @@
   <string name="image_count">%1$d</string>
     <string name="add">Add</string>
     <string name="take_picture">TAKE PHOTO</string>
+    <string name="choose_more">Please choose More!</string>
+    <string name="min_count_tips">Must choose %1$d photos at least</string>
 
 </resources>
